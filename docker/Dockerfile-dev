@@ -4,7 +4,7 @@ FROM continuumio/miniconda3:latest
 # load in the environment.yml file
 ADD ./docker/environment.yml /
 
-RUN conda install -c conda-forge xgboost matplotlib pandas-profiling jupyterlab
+RUN conda install -c conda-forge xgboost matplotlib pandas-profiling jupyterlab keras
 RUN conda install -c plotly plotly
 RUN conda install -c anaconda scikit-learn pandas numpy
 
