@@ -4,7 +4,7 @@ FROM continuumio/miniconda3:latest
 # load in the environment.yml file
 ADD ./docker/environment.yml /
 
-RUN conda install -c conda-forge xgboost matplotlib jupyterlab nodejs
+RUN conda install -c conda-forge xgboost matplotlib jupyterlab nodejs python-graphviz
 RUN conda install -c anaconda scikit-learn pandas numpy ipywidgets
 
 
@@ -13,4 +13,5 @@ RUN conda install -c anaconda scikit-learn pandas numpy ipywidgets
 # create the environmnt
 RUN conda update -n base conda -y && conda env update
 
+#install ipywidgets extension
 RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager
